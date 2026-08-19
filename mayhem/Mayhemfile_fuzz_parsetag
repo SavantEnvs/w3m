@@ -1,0 +1,8 @@
+# libFuzzer target over parse_tag() (parsetagx.c) — w3m's HTML tag/attribute tokenizer: tag-name
+# lookup against the generated `tagtable` hash, then quoted/single-quoted/bare attribute-value
+# parsing into a struct parsed_tag. The first thing any fetched HTML page runs through.
+project: savantenvs/w3m
+target: fuzz_parsetag
+cmds:
+  - cmd: /mayhem/fuzz_parsetag
+    libfuzzer: true

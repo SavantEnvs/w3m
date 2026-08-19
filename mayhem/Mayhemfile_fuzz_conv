@@ -1,0 +1,7 @@
+# libFuzzer target over wc_guess_charset_short()/wc_Str_conv_with_detect() — w3m's charset-guessing
+# and conversion layer (libwc), fed <from-charset>\0<to-charset>\0<bytes-to-convert>.
+project: savantenvs/w3m
+target: fuzz_conv
+cmds:
+  - cmd: /mayhem/fuzz_conv
+    libfuzzer: true

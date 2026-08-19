@@ -1,0 +1,8 @@
+# libFuzzer target over parseURL() (url.c) — parses a raw URL string (scheme, userinfo, host, port,
+# path, query, fragment) into a ParsedURL struct. Every URL w3m follows (typed, an HTML anchor/form
+# action, a bookmark/history entry, a proxy setting) goes through this exact parser.
+project: savantenvs/w3m
+target: fuzz_url
+cmds:
+  - cmd: /mayhem/fuzz_url
+    libfuzzer: true

@@ -1,0 +1,20 @@
+# .dockerignore for the commit-image build (mayhem/Dockerfile COPYs the context into /mayhem).
+# The FULL repo — including .git history, which the grader needs — must survive; only local build
+# artifacts and editor/OS noise are dropped.
+
+# ── Build outputs / local cruft ──────────────────────────────────────────────
+# mayhem/build.sh builds out-of-source under $HOME, so nothing here is needed in the context.
+build/
+out/
+*.o
+*.a
+*.so
+*.la
+*.lo
+*.dylib
+**/__pycache__/
+
+# ── Editor / OS noise ────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+*~

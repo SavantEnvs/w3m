@@ -1,0 +1,8 @@
+# libFuzzer target over checkType() (etc.c) — turns a raw fetched/displayed line into per-char
+# display properties, walking backspace and ANSI-color escapes inline. Shipped an OOB read/write as
+# recently as edc6026 ("Fix OOB access due to multiple backspaces"), fixing an incomplete prior fix.
+project: savantenvs/w3m
+target: fuzz_checktype
+cmds:
+  - cmd: /mayhem/fuzz_checktype
+    libfuzzer: true
